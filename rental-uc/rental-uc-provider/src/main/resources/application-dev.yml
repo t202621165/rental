@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.102:3306/renting?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: iwanol...
+  redis:
+    database: 0
+    host: 192.168.0.102
+    port: 6379
+    timeout: 3000
+    jedis:
+      pool:
+        min-idle: 1
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug

@@ -1,0 +1,23 @@
+server:
+  port: 8088
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    mode: HTML5
+    suffix: .html
+    prefix: classpath:/templates/
+  main:
+    allow-bean-definition-overriding: true
+  session:
+    store-type: redis
+dubbo:
+  application:
+    name: rental-web
+    qos-enable: true
+    qos-port: 33333
+    qos-accept-foreign-ip: false
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  consumer:
+    timeout: 3000

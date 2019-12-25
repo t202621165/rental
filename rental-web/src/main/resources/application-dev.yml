@@ -1,0 +1,20 @@
+spring:
+  devtools:
+    restart:
+      exclude: templates/**,static/**
+  redis:
+    database: 0
+    host: 192.168.0.102
+    port: 6379
+    timeout: 3000
+    lettuce:
+      pool:
+        min-idle: 1
+  thymeleaf:
+    cache: false
+  servlet:
+    multipart:
+      enabled: true
+      location: /tmp
+      file-size-threshold: 5MB
+      max-request-size: 20MB
