@@ -71,6 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         AuthFilter authFilter = new AuthFilter();
         authFilter.setAuthenticationManager(authenticationManager());
         authFilter.setAuthenticationFailureHandler(authFailHandler());
+        System.out.println("web security start....");
         return authFilter;
     }
 }

@@ -40,6 +40,9 @@ public class SmsServiceImpl implements ISmsService {
     @Value("${aliyun.sms.template-code}")
     private String templateCode;
 
+    @Value("${aliyun.sms.sign-name}")
+    private String signName;
+
     private IAcsClient acsClient;
 
     private static final Random RANDOM = new Random();
@@ -71,7 +74,7 @@ public class SmsServiceImpl implements ISmsService {
         code = builder.toString();
         // post方式发送短信模版
         SendSmsRequest request = new SendSmsRequest();
-        request.setSignName("租个房");
+        request.setSignName(signName);
         request.setPhoneNumbers(telephone);
         request.setTemplateCode(templateCode);
         request.setTemplateParam(String.format("{\"code\":\"%s\"}", code));
